@@ -17,20 +17,20 @@ export const users = mysqlTable("users", {
   id: varchar("id", { length: 255 }).primaryKey(),
   name: varchar("name", { length: 255 }),
   email: varchar("email", { length: 255 }).notNull().unique(),
-  emailVerified: timestamp("emailVerified"),
+  emailVerified: timestamp("email_verified"),
   image: varchar("image", { length: 500 }),
   role: varchar("role", { length: 50 }).default("user").notNull(),
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 // ===========================
 // Auth Tables (NextAuth)
 // ===========================
 export const accounts = mysqlTable("accounts", {
-  userId: varchar("userId", { length: 255 }).notNull(),
+  userId: varchar("user_id", { length: 255 }).notNull(),
   type: varchar("type", { length: 255 }).notNull(),
   provider: varchar("provider", { length: 255 }).notNull(),
-  providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
+  providerAccountId: varchar("provider_account_id", { length: 255 }).notNull(),
   refresh_token: text("refresh_token"),
   access_token: text("access_token"),
   expires_at: int("expires_at"),
@@ -41,12 +41,12 @@ export const accounts = mysqlTable("accounts", {
 });
 
 export const sessions = mysqlTable("sessions", {
-  sessionToken: varchar("sessionToken", { length: 255 }).primaryKey(),
-  userId: varchar("userId", { length: 255 }).notNull(),
+  sessionToken: varchar("session_token", { length: 255 }).primaryKey(),
+  userId: varchar("user_id", { length: 255 }).notNull(),
   expires: timestamp("expires").notNull(),
 });
 
-export const verificationTokens = mysqlTable("verificationTokens", {
+export const verificationTokens = mysqlTable("verification_tokens", {
   identifier: varchar("identifier", { length: 255 }).notNull(),
   token: varchar("token", { length: 255 }).notNull(),
   expires: timestamp("expires").notNull(),
@@ -58,14 +58,14 @@ export const verificationTokens = mysqlTable("verificationTokens", {
 export const occasions = mysqlTable("occasions", {
   id: int("id").primaryKey().autoincrement(),
   title: varchar("title", { length: 255 }).notNull(),
-  titleAr: varchar("titleAr", { length: 255 }).notNull(),
+  titleAr: varchar("title_ar", { length: 255 }).notNull(),
   slug: varchar("slug", { length: 100 }).notNull().unique(),
   description: text("description"),
   icon: varchar("icon", { length: 100 }),
   color: varchar("color", { length: 20 }).default("#0F6B3F"),
-  isActive: boolean("isActive").default(true).notNull(),
-  sortOrder: int("sortOrder").default(0),
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  isActive: boolean("is_active").default(true).notNull(),
+  sortOrder: int("sort_order").default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 // ===========================
@@ -76,22 +76,22 @@ export const cards = mysqlTable(
   {
     id: int("id").primaryKey().autoincrement(),
     title: varchar("title", { length: 255 }).notNull(),
-    titleAr: varchar("titleAr", { length: 255 }).notNull(),
-    imageUrl: varchar("imageUrl", { length: 500 }).notNull(),
-    thumbnailUrl: varchar("thumbnailUrl", { length: 500 }),
-    occasionId: int("occasionId").notNull(),
-    defaultColor: varchar("defaultColor", { length: 20 }).default("#FFFFFF").notNull(),
-    defaultFontSize: int("defaultFontSize").default(48).notNull(),
-    defaultPositionX: float("defaultPositionX").default(50).notNull(), // percentage 0-100
-    defaultPositionY: float("defaultPositionY").default(50).notNull(), // percentage 0-100
-    defaultFontFamily: varchar("defaultFontFamily", { length: 100 }).default("Noto Naskh Arabic").notNull(),
-    defaultTextAlign: varchar("defaultTextAlign", { length: 20 }).default("center").notNull(),
+    titleAr: varchar("title_ar", { length: 255 }).notNull(),
+    imageUrl: varchar("image_url", { length: 500 }).notNull(),
+    thumbnailUrl: varchar("thumbnail_url", { length: 500 }),
+    occasionId: int("occasion_id").notNull(),
+    defaultColor: varchar("default_color", { length: 20 }).default("#FFFFFF").notNull(),
+    defaultFontSize: int("default_font_size").default(48).notNull(),
+    defaultPositionX: float("default_position_x").default(50).notNull(),
+    defaultPositionY: float("default_position_y").default(50).notNull(),
+    defaultFontFamily: varchar("default_font_family", { length: 100 }).default("Noto Naskh Arabic").notNull(),
+    defaultTextAlign: varchar("default_text_align", { length: 20 }).default("center").notNull(),
     description: text("description"),
-    downloadsCount: int("downloadsCount").default(0).notNull(),
-    isActive: boolean("isActive").default(true).notNull(),
-    isFeatured: boolean("isFeatured").default(false).notNull(),
-    createdAt: timestamp("createdAt").defaultNow().notNull(),
-    updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+    downloadsCount: int("downloads_count").default(0).notNull(),
+    isActive: boolean("is_active").default(true).notNull(),
+    isFeatured: boolean("is_featured").default(false).notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
   },
   (table) => ({
     occasionIdx: index("occasion_idx").on(table.occasionId),
@@ -103,13 +103,13 @@ export const cards = mysqlTable(
 // Card Downloads Table
 // ===========================
 export const cardDownloads = mysqlTable(
-  "cardDownloads",
+  "card_downloads",
   {
     id: int("id").primaryKey().autoincrement(),
-    cardId: int("cardId").notNull(),
-    userName: varchar("userName", { length: 255 }),
-    downloadedAt: timestamp("downloadedAt").defaultNow().notNull(),
-    ipHash: varchar("ipHash", { length: 255 }), // hashed for privacy
+    cardId: int("card_id").notNull(),
+    userName: varchar("user_name", { length: 255 }),
+    downloadedAt: timestamp("downloaded_at").defaultNow().notNull(),
+    ipHash: varchar("ip_hash", { length: 255 }),
   },
   (table) => ({
     cardIdx: index("card_idx").on(table.cardId),
