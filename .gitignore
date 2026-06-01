@@ -1,0 +1,32 @@
+# Dependencies & build output
+node_modules/
+.next/
+out/
+dist/
+
+# Environment files (NEVER commit these)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Uploads (mount as Docker volume in production)
+# public/cards/*.png  # Keep seeded cards
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
