@@ -12,7 +12,9 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: true } : undefined,
+  ssl: process.env.DB_SSL === "true"
+    ? { rejectUnauthorized: false, minVersion: "TLSv1.2" }
+    : undefined,
 });
 
 export const db = drizzle(pool, { schema, mode: "default" });
