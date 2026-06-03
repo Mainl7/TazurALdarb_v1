@@ -12,21 +12,17 @@ export async function GET() {
       ssl: { rejectUnauthorized: false },
     });
 
-    const [occasions] = await connection.execute("SELECT COUNT(*) as count FROM occasions");
-    const [cards] = await connection.execute("SELECT COUNT(*) as count FROM cards");
-    const [activeCards] = await connection.execute("SELECT COUNT(*) as count FROM cards WHERE is_active = 1");
-    const [sampleCards] = await connection.execute(
-      "SELECT id, title_ar, occasion_id, is_active FROM cards LIMIT 5"
-    );
+    const [tables] = await connection.execute("SHOW TABLES");
+    const [descCards] = await connection.execute("DESCRIBE cards");
+    const [cardCount] = await connection.execute("SELECT COUNT(*) as count FROM cards");
 
     await connection.end();
 
     return NextResponse.json({
       success: true,
-      occasions,
-      cards,
-      activeCards,
-      sampleCards,
+      tables,
+      descCards,
+      cardCount,
     });
   } catch (error: any) {
     return NextResponse.json({
