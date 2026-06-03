@@ -504,7 +504,7 @@ function StatsSection() {
             رسالتنا في أرقام
           </h2>
           <div className="divider-gold" />
-          <p className="text-white text-base max-w-2xl mx-auto">
+          <p className="text-base max-w-2xl mx-auto text-center" style={{color:'rgba(255,255,255,0.92)'}}>
             جمعية تآزر لرعاية الأيتام بمحافظة الدرب - جمعية خيرية تعمل على رعاية
             الأيتام وتمكينهم اجتماعياً وتعليمياً
           </p>
@@ -805,30 +805,30 @@ export default function HomePage() {
               <h3 className="text-[#C8A969] font-bold mb-4">معلومات التواصل</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="tel:0555113479" className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
-                    <span dir="ltr">0555113479</span>
+                  <a href="tel:0555113479" className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
                     <span>📞</span>
+                    <span dir="ltr">0555113479</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://wa.me/966555113479" target="_blank" rel="noopener noreferrer"
-                    className="text-white/75 hover:text-green-400 transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
-                    <span>واتسآب</span>
+                    className="text-white/75 hover:text-green-400 transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
                     <span>💬</span>
+                    <span>واتسآب</span>
                   </a>
                 </li>
                 <li>
                   <a href="mailto:tazuraldarb@outlook.sa"
-                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
-                    <span dir="ltr" className="text-xs">tazuraldarb@outlook.sa</span>
+                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
                     <span>📧</span>
+                    <span dir="ltr" className="text-xs">tazuraldarb@outlook.sa</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://maps.app.goo.gl/ZNREASoU3sH9nVEG7" target="_blank" rel="noopener noreferrer"
-                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
-                    <span>محافظة الدرب، منطقة جازان</span>
+                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
                     <span>📍</span>
+                    <span>محافظة الدرب، منطقة جازان</span>
                   </a>
                 </li>
               </ul>
