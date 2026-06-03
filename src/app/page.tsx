@@ -441,10 +441,10 @@ function StatsSection() {
   });
 
   const targets = {
-    orphans: 247,
-    beneficiaries: 1200,
-    programs: 18,
-    years: 12,
+    orphans: 500,
+    beneficiaries: 185,
+    programs: 100,
+    years: 500,
   };
 
   useEffect(() => {
@@ -478,10 +478,10 @@ function StatsSection() {
   }, [animated]);
 
   const stats = [
-    { value: counts.orphans, suffix: "+", label: "يتيم مكفول", icon: "🤲", color: "#C8A969" },
-    { value: counts.beneficiaries, suffix: "+", label: "مستفيد من خدماتنا", icon: "👨‍👩‍👧‍👦", color: "#FFFFFF" },
-    { value: counts.programs, suffix: "", label: "برنامج ومشروع", icon: "📋", color: "#C8A969" },
-    { value: counts.years, suffix: " عاماً", label: "من العطاء المتواصل", icon: "🏆", color: "#FFFFFF" },
+    { value: counts.orphans, suffix: "+", label: "يتيم", icon: "🤲", color: "#C8A969" },
+    { value: counts.beneficiaries, suffix: "+", label: "مستفيد", icon: "👨‍👩‍👧‍👦", color: "#FFFFFF" },
+    { value: counts.programs, suffix: "+", label: "مشروع", icon: "📋", color: "#C8A969" },
+    { value: counts.years, suffix: "+", label: "حالة", icon: "🏆", color: "#FFFFFF" },
   ];
 
   return (
