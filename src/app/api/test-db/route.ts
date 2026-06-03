@@ -12,33 +12,27 @@ export async function GET() {
       ssl: { rejectUnauthorized: false },
     });
 
-    const [rows] = await connection.execute("SELECT COUNT(*) as count FROM occasions");
+    const [occasions] = await connection.execute("SELECT COUNT(*) as count FROM occasions");
+    const [cards] = await connection.execute("SELECT COUNT(*) as count FROM cards");
+    const [activeCards] = await connection.execute("SELECT COUNT(*) as count FROM cards WHERE is_active = 1");
+    const [sampleCards] = await connection.execute(
+      "SELECT id, title_ar, occasion_id, is_active FROM cards LIMIT 5"
+    );
+
     await connection.end();
 
     return NextResponse.json({
       success: true,
-      message: "DB connected!",
-      data: rows,
-      env: {
-        host: process.env.DB_HOST,
-        port: process.env.DB_PORT,
-        user: process.env.DB_USER,
-        database: process.env.DB_NAME,
-        ssl: process.env.DB_SSL,
-      },
+      occasions,
+      cards,
+      activeCards,
+      sampleCards,
     });
   } catch (error: any) {
     return NextResponse.json({
       success: false,
       error: error.message,
       code: error.code,
-      env: {
-        host: process.env.DB_HOST,
-        port: process.env.DB_PORT,
-        user: process.env.DB_USER,
-        database: process.env.DB_NAME,
-        ssl: process.env.DB_SSL,
-      },
     }, { status: 500 });
   }
 }
