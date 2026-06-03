@@ -504,7 +504,7 @@ function StatsSection() {
             رسالتنا في أرقام
           </h2>
           <div className="divider-gold" />
-          <p className="section-subtitle text-white/70 max-w-2xl mx-auto">
+          <p className="text-white text-base max-w-2xl mx-auto">
             جمعية تآزر لرعاية الأيتام بمحافظة الدرب - جمعية خيرية تعمل على رعاية
             الأيتام وتمكينهم اجتماعياً وتعليمياً
           </p>
