@@ -743,12 +743,12 @@ export default function HomePage() {
                   className="h-24 w-auto object-contain"
                 />
               </div>
-              <p className="text-white/50 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed">
                 جمعية تآزر لرعاية الأيتام بمحافظة الدرب —
                 تسعى لتمكين الأيتام من تحقيق حياة كريمة ومستقبل واعد.
               </p>
               {/* Social Media */}
-              <div className="flex gap-3 mt-4 justify-center md:justify-start">
+              <div className="flex gap-3 mt-4 justify-center md:justify-end">
                 <a href="https://x.com/tazuraldarb" target="_blank" rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl flex items-center justify-center text-white hover:opacity-80 transition-opacity"
                   style={{background: 'rgba(255,255,255,0.1)'}}>
@@ -801,34 +801,34 @@ export default function HomePage() {
             </div>
 
             {/* Contact Info */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-right">
               <h3 className="text-[#C8A969] font-bold mb-4">معلومات التواصل</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="tel:0555113479" className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
-                    <span>📞</span>
+                  <a href="tel:0555113479" className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
                     <span dir="ltr">0555113479</span>
+                    <span>📞</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://wa.me/966555113479" target="_blank" rel="noopener noreferrer"
-                    className="text-white/50 hover:text-green-400 transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
-                    <span>💬</span>
+                    className="text-white/75 hover:text-green-400 transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
                     <span>واتسآب</span>
+                    <span>💬</span>
                   </a>
                 </li>
                 <li>
                   <a href="mailto:tazuraldarb@outlook.sa"
-                    className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
-                    <span>📧</span>
+                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
                     <span dir="ltr" className="text-xs">tazuraldarb@outlook.sa</span>
+                    <span>📧</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://maps.app.goo.gl/ZNREASoU3sH9nVEG7" target="_blank" rel="noopener noreferrer"
-                    className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
-                    <span>📍</span>
+                    className="text-white/75 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-end gap-2">
                     <span>محافظة الدرب، منطقة جازان</span>
+                    <span>📍</span>
                   </a>
                 </li>
               </ul>
