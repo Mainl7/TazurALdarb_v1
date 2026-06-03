@@ -639,14 +639,15 @@ export default function HomePage() {
       <header className="fixed top-0 right-0 left-0 z-50 glass-dark">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="h-12 w-auto flex items-center">
-              <Image src="/images/logo.png" alt="شعار جمعية تآزر" width={48} height={48} className="h-12 w-auto object-contain" />
-            </div>
-            <div>
-              <div className="text-white font-bold text-sm leading-tight">جمعية تآزر لرعاية الأيتام</div>
-              <div className="text-[#C8A969]/80 text-xs">محافظة الدرب</div>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo-horizontal.png"
+              alt="جمعية تآزر لرعاية الأيتام بمحافظة الدرب"
+              width={220}
+              height={56}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Nav */}
@@ -685,12 +686,14 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="py-12 text-center" style={{background: '#1a2e24'}}>
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Image src="/images/logo.png" alt="شعار جمعية تآزر" width={56} height={56} className="h-14 w-auto object-contain" />
-            <div>
-              <div className="text-white font-bold">جمعية تآزر لرعاية الأيتام</div>
-              <div className="text-[#C8A969]/60 text-xs">محافظة الدرب</div>
-            </div>
+          <div className="flex items-center justify-center mb-6">
+            <Image
+              src="/images/logo.png"
+              alt="جمعية تآزر لرعاية الأيتام بمحافظة الدرب"
+              width={160}
+              height={160}
+              className="h-32 w-auto object-contain"
+            />
           </div>
           <p className="text-white/40 text-sm">
             © {new Date().getFullYear()} جمعية تآزر لرعاية الأيتام بمحافظة الدرب. جميع الحقوق محفوظة.
