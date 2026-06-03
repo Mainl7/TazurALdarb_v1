@@ -41,6 +41,7 @@ export const occasionsRouter = router({
         description: z.string().optional(),
         isActive: z.boolean().optional(),
         sortOrder: z.number().optional(),
+        color: z.string().optional(),
       })
     )
     .mutation(async ({ ctx, input }) => {

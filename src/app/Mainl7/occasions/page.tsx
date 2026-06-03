@@ -1,22 +1,36 @@
 "use client";
 import { trpc } from "@/lib/trpc/react";
+import { useState } from "react";
+
+// Brand color presets
+const BRAND_COLORS = [
+  { label: "أخضر رئيسي", value: "#3F806A" },
+  { label: "أخضر غامق", value: "#355046" },
+  { label: "ذهبي", value: "#C8A969" },
+  { label: "ذهبي غامق", value: "#a8893f" },
+  { label: "بني", value: "#8B4513" },
+  { label: "بنفسجي", value: "#4B0082" },
+];
 
 export default function AdminOccasionsPage() {
   const utils = trpc.useUtils();
-  
+  const [editingColor, setEditingColor] = useState<number | null>(null);
+  const [colorValue, setColorValue] = useState("");
+
   const { data: occasions, isLoading } = trpc.occasions.adminGetAll.useQuery();
   const updateOccasion = trpc.occasions.update.useMutation({
     onSuccess: () => {
       utils.occasions.adminGetAll.invalidate();
-      alert("تم تحديث الحالة بنجاح");
+      setEditingColor(null);
     },
   });
 
   const toggleStatus = async (id: number, currentStatus: boolean) => {
-    await updateOccasion.mutateAsync({
-      id,
-      isActive: !currentStatus,
-    });
+    await updateOccasion.mutateAsync({ id, isActive: !currentStatus });
+  };
+
+  const saveColor = async (id: number) => {
+    await updateOccasion.mutateAsync({ id, color: colorValue });
   };
 
   if (isLoading) {
@@ -54,10 +68,66 @@ export default function AdminOccasionsPage() {
                 </td>
                 <td className="px-6 py-4 text-gray-500" dir="ltr">{occ.title}</td>
                 <td className="px-6 py-4">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full border shadow-sm" style={{backgroundColor: occ.color || '#000'}} />
-                    <span className="text-sm text-gray-500" dir="ltr">{occ.color}</span>
-                  </div>
+                  {editingColor === occ.id ? (
+                    <div className="space-y-2">
+                      {/* Color presets */}
+                      <div className="flex flex-wrap gap-1.5">
+                        {BRAND_COLORS.map((c) => (
+                          <button
+                            key={c.value}
+                            title={c.label}
+                            onClick={() => setColorValue(c.value)}
+                            className="w-7 h-7 rounded-full border-2 transition-transform hover:scale-110"
+                            style={{
+                              backgroundColor: c.value,
+                              borderColor: colorValue === c.value ? "#000" : "transparent",
+                            }}
+                          />
+                        ))}
+                      </div>
+                      {/* Custom color picker */}
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="color"
+                          value={colorValue}
+                          onChange={(e) => setColorValue(e.target.value)}
+                          className="w-8 h-8 rounded cursor-pointer border border-gray-200"
+                        />
+                        <input
+                          type="text"
+                          value={colorValue}
+                          onChange={(e) => setColorValue(e.target.value)}
+                          className="border border-gray-200 rounded-lg px-2 py-1 text-sm w-24"
+                          dir="ltr"
+                        />
+                      </div>
+                      {/* Actions */}
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => saveColor(occ.id)}
+                          disabled={updateOccasion.isPending}
+                          className="px-3 py-1 bg-green-600 text-white rounded-lg text-xs font-bold hover:bg-green-700"
+                        >
+                          حفظ
+                        </button>
+                        <button
+                          onClick={() => setEditingColor(null)}
+                          className="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-bold hover:bg-gray-200"
+                        >
+                          إلغاء
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => { setEditingColor(occ.id); setColorValue(occ.color || "#3F806A"); }}
+                      className="flex items-center gap-2 hover:opacity-80 transition-opacity group"
+                    >
+                      <span className="w-7 h-7 rounded-full border-2 border-gray-200 shadow-sm group-hover:border-gray-400 transition-colors" style={{ backgroundColor: occ.color || "#000" }} />
+                      <span className="text-sm text-gray-500 font-mono" dir="ltr">{occ.color}</span>
+                      <span className="text-xs text-gray-400 opacity-0 group-hover:opacity-100">✏️</span>
+                    </button>
+                  )}
                 </td>
                 <td className="px-6 py-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
@@ -71,8 +141,8 @@ export default function AdminOccasionsPage() {
                     onClick={() => toggleStatus(occ.id, occ.isActive)}
                     disabled={updateOccasion.isPending}
                     className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                      occ.isActive 
-                        ? 'bg-red-50 text-red-600 hover:bg-red-100' 
+                      occ.isActive
+                        ? 'bg-red-50 text-red-600 hover:bg-red-100'
                         : 'bg-green-50 text-green-600 hover:bg-green-100'
                     }`}
                   >
@@ -88,6 +158,11 @@ export default function AdminOccasionsPage() {
             لا توجد مناسبات مضافة حالياً.
           </div>
         )}
+      </div>
+
+      {/* Color usage info */}
+      <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-xl text-sm text-blue-700">
+        💡 <strong>فائدة اللون:</strong> يظهر كخلفية لزر المناسبة في صفحة البطاقات عند الضغط عليه للفلترة
       </div>
     </div>
   );
