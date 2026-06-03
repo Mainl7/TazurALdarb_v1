@@ -1,12 +1,13 @@
 "use client";
 import { trpc } from "@/lib/trpc/react";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  PieChart, Pie, Cell, Legend
 } from "recharts";
 import Image from "next/image";
 import Link from "next/link";
 
-const COLORS = ["#0F6B3F", "#D4AF37", "#1B3A6B", "#4B0082"];
+const COLORS = ["#3F806A", "#C8A969", "#355046", "#a8893f"];
 
 function StatCard({
   icon, value, label, color, bgColor
@@ -118,17 +119,17 @@ export default function DashboardPage() {
 
         {/* Pie chart */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 className="font-bold text-gray-800 mb-6">توزيع البطاقات</h2>
+          <h2 className="font-bold text-gray-800 mb-4">توزيع البطاقات</h2>
           <ResponsiveContainer width="100%" height={260}>
             <PieChart>
               <Pie
                 data={barData}
                 cx="50%"
-                cy="50%"
-                outerRadius={100}
+                cy="45%"
+                outerRadius={90}
+                innerRadius={40}
                 dataKey="value"
-                label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
-                labelLine={false}
+                paddingAngle={3}
               >
                 {barData.map((_: any, index: number) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -137,6 +138,11 @@ export default function DashboardPage() {
               <Tooltip
                 formatter={(value: any) => [Number(value ?? 0).toLocaleString("ar-SA"), "تحميل"]}
                 contentStyle={{ fontFamily: "Tajawal", borderRadius: "12px" }}
+              />
+              <Legend
+                iconType="circle"
+                iconSize={10}
+                formatter={(value) => <span style={{ fontFamily: "Tajawal", fontSize: 13, color: "#374151" }}>{value}</span>}
               />
             </PieChart>
           </ResponsiveContainer>
