@@ -669,10 +669,21 @@ export default function HomePage() {
           </nav>
 
           {/* CTA */}
-          <Link href="/cards" className="btn-gold text-sm px-5 py-2.5 gap-2">
-            <span>ابدأ الآن</span>
-            <span>🎴</span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://taazur-aldarb.sa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold text-sm px-5 py-2.5 gap-2"
+            >
+              <span>تبرع الآن</span>
+              <span>🤍</span>
+            </a>
+            <Link href="/cards" className="hidden md:flex items-center gap-2 text-white/80 hover:text-white text-sm transition-colors">
+              <span>🌄</span>
+              <span>البطاقات</span>
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -683,25 +694,164 @@ export default function HomePage() {
       <HowItWorksSection />
       <StatsSection />
 
-      {/* Footer */}
-      <footer className="py-12 text-center" style={{background: '#1a2e24'}}>
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center justify-center mb-6">
-            <Image
-              src="/images/logo.png"
-              alt="جمعية تآزر لرعاية الأيتام بمحافظة الدرب"
-              width={160}
-              height={160}
-              className="h-32 w-auto object-contain"
-            />
+      {/* Donation CTA Section */}
+      <section className="py-16 text-center relative overflow-hidden" style={{background: 'linear-gradient(135deg, #355046 0%, #3F806A 50%, #C8A969 100%)'}}>
+        <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
+        <div className="max-w-3xl mx-auto px-4 relative">
+          <div className="text-4xl mb-4">🤍</div>
+          <h2 className="text-3xl font-black text-white mb-3">ساهم في كفالة يتيم</h2>
+          <p className="text-white/80 text-lg mb-2">قال النبي صلى الله عليه وسلم: «أنا وكافل اليتيم في الجنة كهاتين»</p>
+          <p className="text-white/60 text-sm mb-8">تبرعك يحقق لليتيم حياة كريمة ومستقبلاً واعداً</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://taazur-aldarb.sa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#355046] font-black text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            >
+              <span>🤍</span>
+              <span>تبرع الآن</span>
+            </a>
+            <a
+              href="https://taazur-aldarb.sa/projects/7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/60 text-white font-bold text-lg rounded-2xl hover:bg-white/10 transition-all"
+            >
+              <span>👤</span>
+              <span>كفالة يتيم</span>
+            </a>
           </div>
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} جمعية تآزر لرعاية الأيتام بمحافظة الدرب. جميع الحقوق محفوظة.
-          </p>
-          <div className="divider-gold mt-4" style={{width: '60px'}} />
-          <p className="text-white/30 text-xs mt-3">
-            منصة بطاقات التهنئة الإسلامية - مجانية للجميع
-          </p>
+          <p className="text-white/40 text-xs mt-6">رقم الترخيص: 1000642400 • محافظة الدرب، منطقة جازان</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="pt-12 pb-6" style={{background: '#0f1e17'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+            {/* Logo & About */}
+            <div className="text-center md:text-right">
+              <div className="flex justify-center md:justify-start mb-4">
+                <Image
+                  src="/images/logo.png"
+                  alt="جمعية تآزر لرعاية الأيتام بمحافظة الدرب"
+                  width={120}
+                  height={120}
+                  className="h-24 w-auto object-contain"
+                />
+              </div>
+              <p className="text-white/50 text-sm leading-relaxed">
+                جمعية تآزر لرعاية الأيتام بمحافظة الدرب —
+                تسعى لتمكين الأيتام من تحقيق حياة كريمة ومستقبل واعد.
+              </p>
+              {/* Social Media */}
+              <div className="flex gap-3 mt-4 justify-center md:justify-start">
+                <a href="https://x.com/tazuraldarb" target="_blank" rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                  style={{background: 'rgba(255,255,255,0.1)'}}>
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.snapchat.com/add/tazuraldarb" target="_blank" rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                  style={{background: 'rgba(255,255,255,0.1)'}}>
+                  👻
+                </a>
+                <a href="https://www.tiktok.com/@tazuraldaarb" target="_blank" rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                  style={{background: 'rgba(255,255,255,0.1)'}}>
+                  🎵
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="text-center">
+              <h3 className="text-[#C8A969] font-bold mb-4">روابط سريعة</h3>
+              <ul className="space-y-3">
+                {[
+                  { href: 'https://www.tazuraldarb.org.sa/', label: 'الموقع الرسمي', icon: '🌐', external: true },
+                  { href: 'https://taazur-aldarb.sa/', label: 'متجر التبرع', icon: '🤍', external: true },
+                  { href: 'https://taazur-aldarb.sa/projects/7', label: 'كفالة يتيم', icon: '👦', external: true },
+                  { href: '/cards', label: 'بطاقات التهنئة', icon: '🌄', external: false },
+                  { href: 'https://www.tazuraldarb.org.sa/about/', label: 'عن الجمعية', icon: 'ℹ️', external: true },
+                  { href: 'https://www.tazuraldarb.org.sa/contact/', label: 'تواصل معنا', icon: '📞', external: true },
+                ].map((link) => (
+                  link.external ? (
+                    <li key={link.href}>
+                      <a href={link.href} target="_blank" rel="noopener noreferrer"
+                        className="text-white/50 hover:text-[#C8A969] transition-colors text-sm flex items-center justify-center gap-2">
+                        <span>{link.icon}</span>
+                        <span>{link.label}</span>
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={link.href}>
+                      <Link href={link.href}
+                        className="text-white/50 hover:text-[#C8A969] transition-colors text-sm flex items-center justify-center gap-2">
+                        <span>{link.icon}</span>
+                        <span>{link.label}</span>
+                      </Link>
+                    </li>
+                  )
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="text-center md:text-left">
+              <h3 className="text-[#C8A969] font-bold mb-4">معلومات التواصل</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="tel:0555113479" className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
+                    <span>📞</span>
+                    <span dir="ltr">0555113479</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/966555113479" target="_blank" rel="noopener noreferrer"
+                    className="text-white/50 hover:text-green-400 transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
+                    <span>💬</span>
+                    <span>واتسآب</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:tazuraldarb@outlook.sa"
+                    className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
+                    <span>📧</span>
+                    <span dir="ltr" className="text-xs">tazuraldarb@outlook.sa</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://maps.app.goo.gl/ZNREASoU3sH9nVEG7" target="_blank" rel="noopener noreferrer"
+                    className="text-white/50 hover:text-white transition-colors text-sm flex items-center justify-center md:justify-start gap-2">
+                    <span>📍</span>
+                    <span>محافظة الدرب، منطقة جازان</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/30 text-xs">
+              © {new Date().getFullYear()} جمعية تآزر لرعاية الأيتام بمحافظة الدرب. جميع الحقوق محفوظة.
+            </p>
+            <div className="flex items-center gap-4">
+              <a href="https://www.tazuraldarb.org.sa/" target="_blank" rel="noopener noreferrer"
+                className="text-white/30 hover:text-[#C8A969] transition-colors text-xs">
+                🌐 الموقع الرسمي
+              </a>
+              <span className="text-white/20">|</span>
+              <a href="https://taazur-aldarb.sa/" target="_blank" rel="noopener noreferrer"
+                className="text-white/30 hover:text-[#C8A969] transition-colors text-xs">
+                🤍 متجر التبرع
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
