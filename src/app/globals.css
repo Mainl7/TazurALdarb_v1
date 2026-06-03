@@ -6,25 +6,26 @@
    CSS Variables - Design System
    ============================== */
 :root {
-  --color-primary: #0F6B3F;
-  --color-primary-light: #1a8f55;
-  --color-primary-dark: #0a4e2d;
-  --color-gold: #D4AF37;
-  --color-gold-light: #e8c84a;
-  --color-gold-dark: #b8922a;
+  /* ألوان جمعية تأزر الرسمية */
+  --color-primary: #3F806A;
+  --color-primary-light: #4e9a82;
+  --color-primary-dark: #355046;
+  --color-gold: #C8A969;
+  --color-gold-light: #d9bf8a;
+  --color-gold-dark: #a8893f;
   --color-white: #FFFFFF;
   --color-off-white: #F9F7F2;
-  --color-dark: #0A1628;
-  --color-dark-card: #0f1f38;
+  --color-dark: #1a2e24;
+  --color-dark-card: #243d30;
   --color-text-primary: #1a2e1a;
-  --color-text-secondary: #4a6741;
-  --color-border: rgba(212, 175, 55, 0.2);
+  --color-text-secondary: #355046;
+  --color-border: rgba(200, 169, 105, 0.2);
   --font-arabic: 'Tajawal', 'Noto Naskh Arabic', sans-serif;
   --font-calligraphy: 'Scheherazade New', serif;
   --radius: 12px;
   --radius-lg: 20px;
-  --shadow-gold: 0 4px 24px rgba(212, 175, 55, 0.2);
-  --shadow-green: 0 4px 24px rgba(15, 107, 63, 0.3);
+  --shadow-gold: 0 4px 24px rgba(200, 169, 105, 0.25);
+  --shadow-green: 0 4px 24px rgba(53, 80, 70, 0.3);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

@@ -59,8 +59,8 @@ function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern-bg"
     >
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A2015]/60 via-transparent to-[#0A1628]/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F6B3F]/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e24]/60 via-transparent to-[#1a2e24]/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#355046]/30 to-transparent" />
 
       {/* Decorative ornaments */}
       <div ref={ornamentsRef} className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -166,14 +166,14 @@ const OCCASIONS_DATA = [
     slug: "eid-al-fitr",
     title: "عيد الفطر المبارك",
     icon: "🌙",
-    color: "from-emerald-700 to-green-900",
-    cardColor: "#0F6B3F",
+    color: "from-[#355046] to-[#1a2e24]",
+    cardColor: "#3F806A",
     description: "بطاقات تهنئة فاخرة بمناسبة عيد الفطر السعيد",
     cards: [
-      "/cards/eid-fitr-1.png",
-      "/cards/eid-fitr-2.png",
-      "/cards/eid-fitr-3.png",
-      "/cards/eid-fitr-4.png",
+      "/cards/eid-fitr/بطاقة تهنئة عيد الفطر 1.png",
+      "/cards/eid-fitr/بطاقة تهنئة عيد الفطر 2.png",
+      "/cards/eid-fitr/بطاقة تهنئة عيد الفطر 3.png",
+      "/cards/eid-fitr/بطاقة تهنئة عيد الفطر 4.png",
     ],
   },
   {
@@ -184,10 +184,10 @@ const OCCASIONS_DATA = [
     cardColor: "#8B4513",
     description: "بطاقات تهنئة فاخرة بمناسبة عيد الأضحى الكريم",
     cards: [
-      "/cards/eid-adha-1.png",
-      "/cards/eid-adha-2.png",
-      "/cards/eid-adha-3.png",
-      "/cards/eid-adha-4.png",
+      "/cards/eid-adha/بطاقة تهنئة عيد الأضحى 1.png",
+      "/cards/eid-adha/بطاقة تهنئة عيد الأضحى 2.png",
+      "/cards/eid-adha/بطاقة تهنئة عيد الأضحى 3.png",
+      "/cards/eid-adha/بطاقة تهنئة عيد الأضحى 4.png",
     ],
   },
   {
@@ -198,24 +198,10 @@ const OCCASIONS_DATA = [
     cardColor: "#4B0082",
     description: "بطاقات تهنئة فاخرة بمناسبة شهر رمضان المبارك",
     cards: [
-      "/cards/ramadan-1.png",
-      "/cards/ramadan-2.png",
-      "/cards/ramadan-3.png",
-      "/cards/ramadan-4.png",
-    ],
-  },
-  {
-    slug: "hijri-new-year",
-    title: "رأس السنة الهجرية",
-    icon: "⭐",
-    color: "from-blue-800 to-slate-900",
-    cardColor: "#1B3A6B",
-    description: "بطاقات تهنئة فاخرة بمناسبة رأس السنة الهجرية الجديدة",
-    cards: [
-      "/cards/hijri-1.png",
-      "/cards/hijri-2.png",
-      "/cards/hijri-3.png",
-      "/cards/hijri-4.png",
+      "/cards/ramadan/بطاقة تهنئة رمضان 1.png",
+      "/cards/ramadan/بطاقة تهنئة رمضان 2.png",
+      "/cards/ramadan/بطاقة تهنئة رمضان 3.png",
+      "/cards/ramadan/بطاقة تهنئة رمضان 4.png",
     ],
   },
 ];
@@ -255,7 +241,7 @@ function OccasionsSection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 mb-4">
             <span className="text-green-600 text-sm font-medium">المناسبات الدينية</span>
           </div>
-          <h2 className="section-title text-[#0F6B3F]">
+          <h2 className="section-title text-[#355046]">
             اختر مناسبتك المفضلة
           </h2>
           <div className="divider-gold" />
@@ -312,8 +298,8 @@ function OccasionsSection() {
                   href={`/cards?occasion=${occasion.slug}`}
                   className="flex items-center justify-center gap-3 w-full py-3 rounded-xl font-bold text-center transition-all duration-300"
                   style={{
-                    background: "linear-gradient(135deg, #D4AF37, #F5D16E)",
-                    color: "#0A1628",
+                    background: "linear-gradient(135deg, #C8A969, #d9bf8a)",
+                    color: "#1a2e24",
                   }}
                 >
                   <span>استعرض كل البطاقات</span>
@@ -362,21 +348,21 @@ function HowItWorksSection() {
       icon: "🎴",
       title: "اختر البطاقة",
       desc: "تصفّح مجموعتنا الفاخرة من البطاقات واختر ما يناسب مناسبتك",
-      color: "#0F6B3F",
+      color: "#3F806A",
     },
     {
       num: "02",
       icon: "✍️",
       title: "اكتب اسمك",
       desc: "أضف اسمك أو اسم من تهنئه على البطاقة مع خيارات التخصيص الكاملة",
-      color: "#D4AF37",
+      color: "#C8A969",
     },
     {
       num: "03",
       icon: "📥",
       title: "حمّل البطاقة",
       desc: "احفظ بطاقتك بجودة عالية 4K وشاركها مع أحبائك مجاناً",
-      color: "#0F6B3F",
+      color: "#3F806A",
     },
   ];
 
@@ -385,10 +371,10 @@ function HowItWorksSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 mb-4"
-               style={{borderColor: 'rgba(212,175,55,0.3)', background: 'rgba(212,175,55,0.08)'}}>
-            <span className="text-sm font-medium" style={{color: '#B8922A'}}>طريقة الاستخدام</span>
+               style={{borderColor: 'rgba(200,169,105,0.3)', background: 'rgba(200,169,105,0.08)'}}>
+            <span className="text-sm font-medium" style={{color: '#a8893f'}}>طريقة الاستخدام</span>
           </div>
-          <h2 className="section-title" style={{color: '#0F6B3F'}}>
+          <h2 className="section-title" style={{color: '#355046'}}>
             3 خطوات بسيطة فقط
           </h2>
           <div className="divider-gold" />
@@ -400,7 +386,7 @@ function HowItWorksSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Connecting line */}
           <div className="hidden md:block absolute top-20 right-[16.5%] left-[16.5%] h-0.5"
-               style={{background: 'linear-gradient(90deg, #0F6B3F, #D4AF37, #0F6B3F)'}} />
+               style={{background: 'linear-gradient(90deg, #3F806A, #C8A969, #3F806A)'}} />
 
           {steps.map((step, i) => (
             <div
@@ -492,9 +478,9 @@ function StatsSection() {
   }, [animated]);
 
   const stats = [
-    { value: counts.orphans, suffix: "+", label: "يتيم مكفول", icon: "🤲", color: "#D4AF37" },
+    { value: counts.orphans, suffix: "+", label: "يتيم مكفول", icon: "🤲", color: "#C8A969" },
     { value: counts.beneficiaries, suffix: "+", label: "مستفيد من خدماتنا", icon: "👨‍👩‍👧‍👦", color: "#FFFFFF" },
-    { value: counts.programs, suffix: "", label: "برنامج ومشروع", icon: "📋", color: "#D4AF37" },
+    { value: counts.programs, suffix: "", label: "برنامج ومشروع", icon: "📋", color: "#C8A969" },
     { value: counts.years, suffix: " عاماً", label: "من العطاء المتواصل", icon: "🏆", color: "#FFFFFF" },
   ];
 
@@ -502,7 +488,7 @@ function StatsSection() {
     <section
       ref={sectionRef}
       className="py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0A2015 0%, #0F6B3F 50%, #0A2015 100%)" }}
+      style={{ background: "linear-gradient(135deg, #1a2e24 0%, #355046 50%, #1a2e24 100%)" }}
     >
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 islamic-pattern-bg" />
@@ -510,9 +496,9 @@ function StatsSection() {
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-400/20 mb-4"
-               style={{background: 'rgba(212,175,55,0.08)'}}>
-            <span className="text-yellow-300 text-sm font-medium">عن جمعية تآزر</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C8A969]/20 mb-4"
+               style={{background: 'rgba(200,169,105,0.08)'}}>
+            <span className="text-[#C8A969] text-sm font-medium">عن جمعية تآزر</span>
           </div>
           <h2 className="section-title text-white">
             رسالتنا في أرقام
@@ -592,10 +578,10 @@ function FeaturedCardsSection() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 mb-4">
-            <span className="text-green-600 text-sm font-medium">أبرز البطاقات</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" style={{background:'rgba(63,128,106,0.08)', border:'1px solid rgba(63,128,106,0.2)'}}>
+            <span className="text-sm font-medium" style={{color:'#3F806A'}}>أبرز البطاقات</span>
           </div>
-          <h2 className="section-title" style={{color: '#0F6B3F'}}>
+          <h2 className="section-title" style={{color: '#355046'}}>
             أكثر البطاقات تحميلاً
           </h2>
           <div className="divider-gold" />
@@ -625,7 +611,7 @@ function FeaturedCardsSection() {
               </div>
               {/* Badge */}
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white"
-                   style={{background: 'rgba(15,107,63,0.9)', backdropFilter: 'blur(4px)'}}>
+                   style={{background: 'rgba(53,80,70,0.9)', backdropFilter: 'blur(4px)'}}>
                 {card.occasionTitleAr}
               </div>
             </Link>
@@ -651,16 +637,15 @@ export default function HomePage() {
     <main>
       {/* Header/Nav */}
       <header className="fixed top-0 right-0 left-0 z-50 glass-dark">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                 style={{background: 'linear-gradient(135deg, #0F6B3F, #1a8f55)'}}>
-              <span className="text-white text-xl font-black">ت</span>
+            <div className="h-12 w-auto flex items-center">
+              <Image src="/images/logo.png" alt="شعار جمعية تآزر" width={48} height={48} className="h-12 w-auto object-contain" />
             </div>
             <div>
-              <div className="text-white font-bold text-sm leading-tight">جمعية تآزر</div>
-              <div className="text-yellow-400/70 text-xs">لرعاية الأيتام</div>
+              <div className="text-white font-bold text-sm leading-tight">جمعية تآزر لرعاية الأيتام</div>
+              <div className="text-[#C8A969]/80 text-xs">محافظة الدرب</div>
             </div>
           </Link>
 
@@ -698,16 +683,13 @@ export default function HomePage() {
       <StatsSection />
 
       {/* Footer */}
-      <footer className="py-12 text-center" style={{background: '#0A1628'}}>
+      <footer className="py-12 text-center" style={{background: '#1a2e24'}}>
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                 style={{background: 'linear-gradient(135deg, #0F6B3F, #1a8f55)'}}>
-              <span className="text-white text-xl font-black">ت</span>
-            </div>
+            <Image src="/images/logo.png" alt="شعار جمعية تآزر" width={56} height={56} className="h-14 w-auto object-contain" />
             <div>
               <div className="text-white font-bold">جمعية تآزر لرعاية الأيتام</div>
-              <div className="text-yellow-400/60 text-xs">محافظة الدرب</div>
+              <div className="text-[#C8A969]/60 text-xs">محافظة الدرب</div>
             </div>
           </div>
           <p className="text-white/40 text-sm">

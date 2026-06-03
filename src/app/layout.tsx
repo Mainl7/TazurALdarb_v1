@@ -73,7 +73,7 @@ export default function RootLayout({
           rel="stylesheet"
           crossOrigin="anonymous"
         />
-        <meta name="theme-color" content="#0F6B3F" />
+        <meta name="theme-color" content="#355046" />
       </head>
       <body className="antialiased">
         <TRPCReactProvider>
