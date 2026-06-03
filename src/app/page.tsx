@@ -713,7 +713,7 @@ export default function HomePage() {
               <span>تبرع الآن</span>
             </a>
             <a
-              href="https://taazur-aldarb.sa/projects/7"
+              href="https://taazur-aldarb.sa/projects/4"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white/60 text-white font-bold text-lg rounded-2xl hover:bg-white/10 transition-all"
@@ -774,7 +774,7 @@ export default function HomePage() {
                 {[
                   { href: 'https://www.tazuraldarb.org.sa/', label: 'الموقع الرسمي', icon: '🌐', external: true },
                   { href: 'https://taazur-aldarb.sa/', label: 'متجر التبرع', icon: '🤍', external: true },
-                  { href: 'https://taazur-aldarb.sa/projects/7', label: 'كفالة يتيم', icon: '👦', external: true },
+                  { href: 'https://taazur-aldarb.sa/projects/4', label: 'كفالة يتيم', icon: '👦', external: true },
                   { href: '/cards', label: 'بطاقات التهنئة', icon: '🌄', external: false },
                   { href: 'https://www.tazuraldarb.org.sa/about/', label: 'عن الجمعية', icon: 'ℹ️', external: true },
                   { href: 'https://www.tazuraldarb.org.sa/contact/', label: 'تواصل معنا', icon: '📞', external: true },
